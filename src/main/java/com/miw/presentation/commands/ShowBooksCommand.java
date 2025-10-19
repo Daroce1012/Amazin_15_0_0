@@ -1,5 +1,7 @@
 package com.miw.presentation.commands;
 
+import com.miw.infrastructure.logger.Logger;
+import com.miw.infrastructure.logger.LoggerAware;
 import com.miw.presentation.book.BookManagerServiceHelper;
 import com.miw.presentation.di.HttpSessionAware;
 import com.miw.presentation.di.ServletContextAware;
@@ -9,7 +11,8 @@ import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
-public class ShowBooksCommand implements Command, HttpSessionAware, ServletRequestAware, ServletContextAware {
+public class ShowBooksCommand implements Command, LoggerAware, HttpSessionAware, ServletRequestAware, ServletContextAware {
+	private Logger logger;
 	private HttpServletRequest request;
 	//private HttpSession session;
 	//private ServletContext context;
@@ -45,5 +48,10 @@ public class ShowBooksCommand implements Command, HttpSessionAware, ServletReque
 
 	public void setHttpSession(HttpSession session) {
 		//this.session = session;
+	}
+
+	@Override
+	public void setLogger(Logger logger) {
+		this.logger = logger;
 	}
 }

@@ -7,6 +7,7 @@ import java.lang.reflect.Method;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.miw.infrastructure.logger.LoggerAware;
 import com.miw.presentation.commands.Command;
 import com.miw.presentation.di.HttpSessionAware;
 import com.miw.presentation.di.ServletContextAware;
@@ -51,6 +52,10 @@ public class ControllerServlet extends HttpServlet {
 				if (command instanceof ServletContextAware) {
 					logger.debug("Injecting session in command " + action);
 					((ServletContextAware) command).setServletContext(req.getServletContext());
+				}
+				if (command instanceof LoggerAware) {
+					logger.debug("Injecting logger in command " + action);
+					((LoggerAware) command).setLogger(new com.miw.infrastructure.logger.LogManager(command.getClass()));
 				}
 
 				populateParameters(req, resp);
