@@ -9,7 +9,7 @@ import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
-public class ShowBooksCommand extends AbstractCommand implements HttpSessionAware, ServletRequestAware, ServletContextAware {
+public class ShowBooksCommand implements Command, HttpSessionAware, ServletRequestAware, ServletContextAware {
 	private HttpServletRequest request;
 	//private HttpSession session;
 	//private ServletContext context;
@@ -25,7 +25,6 @@ public class ShowBooksCommand extends AbstractCommand implements HttpSessionAwar
 		this.myParameter = myParameter;
 	}
 
-	@Override
 	public void execute() {
 		logger.debug("Executing ShowBooksCommand");
 		BookManagerServiceHelper helper = new BookManagerServiceHelper();
@@ -36,17 +35,14 @@ public class ShowBooksCommand extends AbstractCommand implements HttpSessionAwar
 		}
 	}
 
-	@Override
 	public void setServletContext(ServletContext context) {
 		//this.context = context;
 	}
 
-	@Override
 	public void setServletRequest(HttpServletRequest request) {
 		this.request = request;
 	}
 
-	@Override
 	public void setHttpSession(HttpSession session) {
 		//this.session = session;
 	}

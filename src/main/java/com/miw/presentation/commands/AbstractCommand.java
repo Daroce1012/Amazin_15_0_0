@@ -1,7 +1,7 @@
 package com.miw.presentation.commands;
 
-import com.miw.infrastructure.logging.Logger;
-import com.miw.infrastructure.logging.LogManager;
+import com.miw.infrastructure.logger.Logger;
+import com.miw.infrastructure.logger.LogManager;
 
 public abstract class AbstractCommand implements Command {
     protected Logger logger;

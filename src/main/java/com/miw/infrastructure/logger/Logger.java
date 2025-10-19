@@ -1,4 +1,4 @@
-package com.miw.infrastructure.logging;
+package com.miw.infrastructure.logger;
 
 public interface Logger {
     void debug(String message);

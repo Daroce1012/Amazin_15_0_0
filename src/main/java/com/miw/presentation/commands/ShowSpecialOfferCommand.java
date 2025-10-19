@@ -5,14 +5,13 @@ import com.miw.presentation.di.ServletRequestAware;
 
 import jakarta.servlet.http.HttpServletRequest;
 
-public class ShowSpecialOfferCommand extends AbstractCommand implements ServletRequestAware {
+public class ShowSpecialOfferCommand implements Command, ServletRequestAware {
 	private HttpServletRequest request;
 	
 	public ShowSpecialOfferCommand( )
 	{
 	}
 	
-	@Override
 	public void execute()
 	{
 		logger.debug("Executing "+this.getClass().getName());
@@ -24,7 +23,6 @@ public class ShowSpecialOfferCommand extends AbstractCommand implements ServletR
 		}
 	}
 
-	@Override
 	public void setServletRequest(HttpServletRequest request) {
 		this.request = request;		
 	}

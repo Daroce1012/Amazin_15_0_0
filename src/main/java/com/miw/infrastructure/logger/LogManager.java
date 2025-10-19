@@ -1,4 +1,4 @@
-package com.miw.infrastructure.logging;
+package com.miw.infrastructure.logger;
 
 public class LogManager implements Logger {
     private final org.apache.logging.log4j.Logger logger;
