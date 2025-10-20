@@ -1,4 +1,4 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
 <%@ page contentType="text/html; charset=iso-8859-1"
 	pageEncoding="iso-8859-1" language="java"
 	import="java.util.*, com.miw.model.Book,com.miw.presentation.book.*"
@@ -6,10 +6,9 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-
+<html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <title>Amazin</title>
 <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -22,9 +21,10 @@
 	</header>
 	<nav>
 		<ul>
-			<li><a href="index.html">Start</a></li>
+			<li><a href="index.jsp">Start</a></li>
 			<li><a href="http://miw.uniovi.es">About</a></li>
 			<li><a href="mailto:dd@email.com">Contact</a></li>
+			<li><a href="Controller?action=LogoutAction">Logout</a></li>
 		</ul>
 	</nav>
 	<section>
@@ -58,3 +58,4 @@
 			of Oviedo </em>
 	</footer>
 </body>
+</html>
